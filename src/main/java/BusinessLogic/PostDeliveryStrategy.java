@@ -1,12 +1,14 @@
 package BusinessLogic;
 
 import GroupingLogic.Item;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.LinkedList;
 
-public class PostDeliveryStartegy implements Delivery
+public class PostDeliveryStrategy implements Delivery
 {
     @Override
+    @GetMapping("/PostDelivery/")
     public void DeliverStuff(LinkedList<Item> items)
     {
         for(Item trinket : items)

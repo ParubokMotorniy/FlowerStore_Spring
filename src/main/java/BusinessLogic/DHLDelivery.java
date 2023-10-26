@@ -1,12 +1,14 @@
 package BusinessLogic;
 
 import GroupingLogic.Item;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.LinkedList;
 
 public class DHLDelivery implements Delivery
 {
     @Override
+    @GetMapping("/DHLDelivery/")
     public void DeliverStuff(LinkedList<Item> items)
     {
         for(Item trinket : items)

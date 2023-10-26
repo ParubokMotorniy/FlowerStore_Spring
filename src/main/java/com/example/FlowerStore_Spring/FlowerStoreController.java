@@ -1,20 +1,31 @@
 package com.example.FlowerStore_Spring;
 
 import FlowerStore.Flower;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 @RestController
+@RequestMapping("/api/flower")
 public class FlowerStoreController
 {
-    @RequestMapping("/get")
+    private final FlowerService flowerService;
+
+    @Autowired
+    public FlowerStoreController(FlowerService service)
+    {
+        this.flowerService = service;
+    }
+    @GetMapping("/list/")
     public List<Flower> GetFlowers()
     {
-        List<Flower> flowers = new LinkedList<>();
-        flowers.add(new Flower());
-        flowers.add(new Flower());
-        return flowers;
+        return flowerService.GetFlowers();
+    }
+
+    @PostMapping
+    public void AddFlower(@RequestBody Flower flower)
+    {
+        flowerService.Add(flower);
     }
 }
