@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag flower_store
+    - name: Run container
+      run: docker run --name flower_store_image:$(date +%s) -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 flower_store
+      
+    
