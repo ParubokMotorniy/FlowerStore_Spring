@@ -1,6 +1,5 @@
 FROM openjdk:20
 
-VOLUME /tmp
 EXPOSE 8080
 
 WORKDIR /app
