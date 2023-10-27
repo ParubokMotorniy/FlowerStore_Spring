@@ -11,9 +11,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+  
 
     steps:
     - uses: actions/checkout@v3
+      with:
+          java-version: 20
+          distribution: temurin
+          cache: maven
+          
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag flower_store
     - name: Run container
