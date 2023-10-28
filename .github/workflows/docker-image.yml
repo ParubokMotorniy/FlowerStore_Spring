@@ -23,6 +23,5 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag flower_store
     - name: Run container
-      run: docker run --name flower_store_image:$(date +%s) -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 flower_store
-      
+      run: docker run --name flower_store_container:$(date +%s) -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 flower_store
     
