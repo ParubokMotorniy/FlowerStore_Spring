@@ -28,5 +28,5 @@ WORKDIR /app
 COPY --from=build /app/target/StoreSpring.jar /app/StoreSpring.jar
 EXPOSE 8080
 CMD tree
-CMD ["java", "-jar", "FlowerStoreSpring.jar"]
+CMD ["java", "-jar", "StoreSpring.jar"]
 

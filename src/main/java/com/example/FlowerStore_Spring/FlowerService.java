@@ -3,12 +3,15 @@ package com.example.FlowerStore_Spring;
 import FlowerStore.Flower;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.*;
 
 @Service
 public class FlowerService
 {
+    @Autowired
     private FlowerRepository flowerRepository;
 
     @Autowired
@@ -21,7 +24,8 @@ public class FlowerService
         return List.of(new Flower());
     }
 
-    public void Add(Flower flower)
+    @PostMapping("/add/")
+    public void Add(@RequestBody Flower flower)
     {
         flowerRepository.save(flower);
     }

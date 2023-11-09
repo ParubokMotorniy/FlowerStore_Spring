@@ -23,7 +23,7 @@ public class FlowerStoreController
         return flowerService.GetFlowers();
     }
 
-    @PostMapping
+    @PostMapping("/add/")
     public void AddFlower(@RequestBody Flower flower)
     {
         flowerService.Add(flower);

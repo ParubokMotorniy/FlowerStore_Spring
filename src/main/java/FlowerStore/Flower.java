@@ -17,6 +17,7 @@ public class Flower {
     protected int id;
     @Getter
     protected double sepalLength;
+    @Getter
     protected FlowerColor color;
     @Getter
     protected double price;
