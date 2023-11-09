@@ -15,7 +15,7 @@
 	<name>FlowerStore_Spring</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>16</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -65,7 +65,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.example.FlowerStore_Spring.FlowerStoreSpringApplication</mainClass>
+					<mainClass>com.app.FlowerStoreMain.FlowerStoreSpringApplication</mainClass>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
