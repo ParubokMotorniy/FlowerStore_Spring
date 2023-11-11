@@ -19,13 +19,11 @@ public class FlowerService
         flowerRepository = repository;
     }
 
-    //@GetMapping("/flowers/")
     public List<Flower> GetFlowers()
     {
-        return List.of(new Flower());
+        return flowerRepository.findAll();
     }
 
-    //@PostMapping("/add/")
     public void Add(@RequestBody Flower flower)
     {
         flowerRepository.save(flower);
