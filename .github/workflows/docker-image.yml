@@ -2,29 +2,33 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-  
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-          java-version: 20
-          distribution: temurin
-          cache: maven
-    - name: Pull openjdk
-      run: docker pull openjdk
-    - name: Pull maven
-      run: docker pull maven:3.9.2-eclipse-temurin-20
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag flower_store
-    - name: Run container
-      run: docker run --name flower_store_container -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 flower_store
-    
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker
+        uses: docker/setup-docker@v2
+        with:
+          dockerfile: Dockerfile  # Path to your Dockerfile
+
+      - name: Pull openjdk
+        run: docker pull openjdk
+
+      - name: Pull maven
+        run: docker pull maven:3.9.2-eclipse-temurin-20
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag flower_store
+
+      - name: Run container
+        run: docker run --name flower_store_container -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 flower_store
