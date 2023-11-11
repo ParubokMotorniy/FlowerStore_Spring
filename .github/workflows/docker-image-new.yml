@@ -19,6 +19,6 @@ jobs:
             distribution: temurin
             cache: maven
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag flower_store
+      run: docker build . --build-arg CACHEBUST=$(date +%s) --file Dockerfile --tag flower_store --no-cache
     - name: Run container
       run: docker run --name flower_store_container -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 flower_store
