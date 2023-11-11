@@ -17,9 +17,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Docker
-        uses: docker/cli@v2
-        with:
-          dockerfile: Dockerfile  # Path to your Dockerfile
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+          sudo service docker start
+          sudo docker info
 
       - name: Pull openjdk
         run: docker pull openjdk
