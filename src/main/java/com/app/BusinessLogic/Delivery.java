@@ -1,6 +1,6 @@
 package com.app.BusinessLogic;
 
-import com.app.GroupingLogic.Item;
+import GroupingLogic.Item;
 
 import java.util.LinkedList;
 

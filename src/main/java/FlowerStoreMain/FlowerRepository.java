@@ -1,4 +1,4 @@
-package com.app.FlowerStoreMain;
+package FlowerStoreMain;
 
 import com.app.FlowerStore.Flower;
 import org.springframework.data.jpa.repository.JpaRepository;

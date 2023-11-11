@@ -8,7 +8,7 @@ import java.util.LinkedList;
 public class PostDeliveryStrategy implements Delivery
 {
     @Override
-    @GetMapping("/PostDelivery/")
+    @GetMapping("/PostDelivery")
     public void DeliverStuff(LinkedList<Item> items)
     {
         for(Item trinket : items)

@@ -1,4 +1,4 @@
-package com.app.GroupingLogic.Decorators;
+package GroupingLogic.Decorators;
 
 public class RibbonDecorator extends ItemDecorator
 {

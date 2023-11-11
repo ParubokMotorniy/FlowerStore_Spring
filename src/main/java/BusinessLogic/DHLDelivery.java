@@ -8,7 +8,7 @@ import java.util.LinkedList;
 public class DHLDelivery implements Delivery
 {
     @Override
-    @GetMapping("/DHLDelivery/")
+    @GetMapping("/DHLDelivery")
     public void DeliverStuff(LinkedList<Item> items)
     {
         for(Item trinket : items)

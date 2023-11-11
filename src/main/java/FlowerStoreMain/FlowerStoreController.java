@@ -1,15 +1,16 @@
-package com.example.FlowerStore_Spring;
+package FlowerStoreMain;
 
-import FlowerStore.Flower;
+import com.app.FlowerStore.Flower;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/flower")
+@RequestMapping("/api/flowers")
 public class FlowerStoreController
 {
+    @Autowired
     private final FlowerService flowerService;
 
     @Autowired
@@ -17,13 +18,13 @@ public class FlowerStoreController
     {
         this.flowerService = service;
     }
-    @GetMapping("/list/")
+    @GetMapping("/api/flowers/list")
     public List<Flower> GetFlowers()
     {
         return flowerService.GetFlowers();
     }
 
-    @PostMapping
+    @PostMapping("/api/flowers/add")
     public void AddFlower(@RequestBody Flower flower)
     {
         flowerService.Add(flower);

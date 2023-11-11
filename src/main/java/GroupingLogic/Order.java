@@ -1,7 +1,7 @@
 package GroupingLogic;
 
-import BusinessLogic.Delivery;
-import BusinessLogic.Payment;
+import com.app.BusinessLogic.Delivery;
+import com.app.BusinessLogic.Payment;
 
 import java.util.LinkedList;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

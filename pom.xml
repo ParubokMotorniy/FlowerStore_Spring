@@ -65,7 +65,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.app.FlowerStoreMain.FlowerStoreSpringApplication</mainClass>
+					<mainClass>FlowerStoreMain.FlowerStoreSpringApplication</mainClass>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -2,12 +2,9 @@ package GroupingLogic;
 
 public abstract class Item
 {
-    private String description;
+    protected String description;
 
-    public String getDescription()
-    {
-        return description;
-    }
+    public abstract String getDescription();
 
-    abstract double price();
+    public abstract double price();
 }

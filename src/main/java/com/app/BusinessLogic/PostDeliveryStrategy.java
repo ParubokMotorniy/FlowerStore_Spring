@@ -1,6 +1,6 @@
 package com.app.BusinessLogic;
 
-import com.app.GroupingLogic.Item;
+import GroupingLogic.Item;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.LinkedList;
