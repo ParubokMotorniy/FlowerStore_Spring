@@ -7,7 +7,7 @@ COPY mvnw pom.xml ./
 RUN mvn -B -DskipTests clean package
 #RUN find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 
-FROM openjdk:20
+FROM eclipse-temurin:17
 
 WORKDIR /app
 COPY --from=build /app/target/StoreSpring.jar /app/StoreSpring.jar
