@@ -19,6 +19,10 @@ jobs:
           java-version: 20
           distribution: temurin
           cache: maven
+    - name: Pull openjdk
+      run: docker pull openjdk
+    - name: Pull maven
+      run: docker pull maven:3.9.2-eclipse-temurin-20
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag flower_store
     - name: Run container
