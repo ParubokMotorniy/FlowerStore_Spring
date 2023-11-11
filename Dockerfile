@@ -9,7 +9,7 @@ RUN mvn -B -DskipTests clean package
 
 #FROM eclipse-temurin:17 AS run
 WORKDIR /app
-COPY --from=build /app/target/StoreSpring.jar /app/StoreSpring.jar
+COPY  /app/target/StoreSpring.jar /app/StoreSpring.jar
 HEALTHCHECK --interval=30s --timeout=30s CMD curl -f http://localhost:1488/ || exit 1
 ENTRYPOINT ["java", "-jar", "StoreSpring.jar"]
 
