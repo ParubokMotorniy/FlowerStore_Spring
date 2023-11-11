@@ -17,7 +17,7 @@ jobs:
       with:
             java-version: 20
             distribution: temurin
-            cache: maven
+            #cache: maven
     - name: Build the Docker image
       run: docker build . --build-arg CACHEBUST=$(date +%s) --file Dockerfile --tag flower_store --no-cache
     - name: Run container
