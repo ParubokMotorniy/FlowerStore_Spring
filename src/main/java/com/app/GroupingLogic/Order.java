@@ -1,4 +1,4 @@
-package GroupingLogic;
+package com.app.GroupingLogic;
 
 import com.app.BusinessLogic.Delivery;
 import com.app.BusinessLogic.Payment;

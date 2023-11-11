@@ -1,4 +1,4 @@
-package GroupingLogic.Decorators;
+package com.app.GroupingLogic.Decorators;
 
 public class PaperDecorator extends ItemDecorator
 {

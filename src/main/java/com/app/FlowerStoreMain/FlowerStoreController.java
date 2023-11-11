@@ -1,4 +1,4 @@
-package FlowerStoreMain;
+package com.app.FlowerStoreMain;
 
 import com.app.FlowerStore.Flower;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/flowers")
+@RequestMapping("/api/flowers/flower")
 public class FlowerStoreController
 {
     @Autowired
@@ -18,13 +18,13 @@ public class FlowerStoreController
     {
         this.flowerService = service;
     }
-    @GetMapping("/api/flowers/list")
+    @GetMapping("/api/flowers/flower")
     public List<Flower> GetFlowers()
     {
         return flowerService.GetFlowers();
     }
 
-    @PostMapping("/api/flowers/add")
+    @PostMapping("/api/flowers/flower")
     public void AddFlower(@RequestBody Flower flower)
     {
         flowerService.Add(flower);

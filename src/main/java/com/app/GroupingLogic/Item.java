@@ -1,4 +1,4 @@
-package GroupingLogic;
+package com.app.GroupingLogic;
 
 public abstract class Item
 {

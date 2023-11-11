@@ -1,6 +1,6 @@
-package GroupingLogic.Decorators;
+package com.app.GroupingLogic.Decorators;
 
-import GroupingLogic.Item;
+import com.app.GroupingLogic.Item;
 
 public abstract class ItemDecorator extends Item
 {

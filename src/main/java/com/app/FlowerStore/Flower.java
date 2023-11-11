@@ -6,26 +6,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Getter
-@Setter
+
+
+
 @AllArgsConstructor
-public class Flower
-{
+@Setter
+@Entity
+public class Flower {
     @Id
-    @Setter
     protected int id;
-
-    @Setter
+    @Getter
     protected double sepalLength;
-
-    @Setter
     protected FlowerColor color;
-
-    @Setter
+    @Getter
     protected double price;
-
-    @Setter
+    @Getter
     protected FlowerType flowerType;
 
     public Flower(Flower item)
@@ -37,6 +32,11 @@ public class Flower
         this.sepalLength = item.sepalLength;
     }
 
-    public Flower() {
+    public Flower()
+    {
+    }
+
+    public String getColor() {
+        return color.toString();
     }
 }
