@@ -22,7 +22,7 @@ jobs:
     - name: Pull maven
       run: docker pull maven:3.9.2-eclipse-temurin-20
     - name: Pull openjdk
-      run: docker pull openjdk:20
+      run: docker pull openjdk
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag flower_store
     - name: Run container
