@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-            java-version: 20
+            java-version: 17
             distribution: temurin
-            #cache: maven
+            cache: maven
     - name: Build the Docker image
       run: docker build . --build-arg CACHEBUST=$(date +%s) --file Dockerfile --tag flower_store --no-cache
     - name: Run container
