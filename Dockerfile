@@ -7,9 +7,9 @@ COPY mvnw pom.xml ./
 RUN mvn -B -DskipTests clean package
 #RUN find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
 
-#FROM eclipse-temurin:17 AS run
+FROM eclipse-temurin:17 AS run
 WORKDIR /app
-COPY  /app/target/StoreSpring.jar /app/StoreSpring.jar
+COPY --from=build /app/target/StoreSpring.jar /app/StoreSpring.jar
 HEALTHCHECK --interval=30s --timeout=30s CMD curl -f http://localhost:1488/ || exit 1
 ENTRYPOINT ["java", "-jar", "StoreSpring.jar"]
 
