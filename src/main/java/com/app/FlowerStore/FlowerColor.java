@@ -1,4 +1,4 @@
-package FlowerStore;
+package com.app.FlowerStore;
 
 public enum FlowerColor {
     /**

@@ -1,4 +1,4 @@
-package FlowerStore;
+package com.app.FlowerStore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

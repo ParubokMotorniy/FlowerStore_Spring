@@ -1,4 +1,4 @@
-package BusinessLogic;
+package com.app.BusinessLogic;
 
 public interface Payment
 {

@@ -1,32 +1,30 @@
-#FROM openjdk:20
+#FROM postgres:latest AS db
 #
-#VOLUME /tmp
-#EXPOSE 8080
+#ENV POSTGRES_DB=flowers
+#ENV POSTGRES_USER=postgres
+#ENV POSTGRES_PASSWORD=postgres
 #
-#WORKDIR /app
-#COPY .mvn/ .mvn
-#COPY mvnw pom.xml ./
-#COPY src ./src
-#RUN ./mvnw dependency:resolve
-#
-##FROM base as development
-#CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.profiles=mysql", "-Dspring-boot.run.jvmArguments='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5432'"]
+#COPY init.sql /docker-entrypoint-initdb.d/
+#HEALTHCHECK --interval=30s --timeout=30s CMD curl -f http://localhost:1488/ || exit 1
 
-# Stage 1: Build the application using Maven
 FROM maven:3.9.2-eclipse-temurin-20 AS build
-#SHELL ["cmd", "/S", "/C"]
 
 WORKDIR /app
-COPY .mvn/ app/mvn
-COPY src/ app/src
+COPY .mvn/ ./mvn
+COPY src/ ./src
 COPY mvnw pom.xml ./
 RUN mvn -B -DskipTests clean package
 
-# Stage 2: Create the final Docker image
-FROM openjdk:20
+ARG CACHEBUST=1
+FROM eclipse-temurin:17 AS run
 WORKDIR /app
 COPY --from=build /app/target/StoreSpring.jar /app/StoreSpring.jar
+<<<<<<< HEAD
 EXPOSE 8080
 CMD tree
 CMD ["java", "-jar", "StoreSpring.jar"]
 
+=======
+EXPOSE 5432
+ENTRYPOINT ["java", "-jar", "StoreSpring.jar"]
+>>>>>>> 28eb56bf261fa064f7b1caf2dff094ec54cb969e

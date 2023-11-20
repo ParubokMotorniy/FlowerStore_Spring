@@ -1,13 +1,15 @@
-package com.example.FlowerStore_Spring;
+package com.app.FlowerStoreMain;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-public class FlowerStoreSpringApplication {
-
-	public static void main(String[] args) {
+@EntityScan("com.app.*")
+public class FlowerStoreSpringApplication
+{
+	public static void main(String[] args)
+	{
 		SpringApplication.run(FlowerStoreSpringApplication.class, args);
 	}
-
 }
